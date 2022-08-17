@@ -9,9 +9,7 @@ pipeline{
                stage("predeploymentstep"){
                steps{
                 bat "ant -f C:\\raj\\automationpoc\\esb\\stlfLoadForecast\\build_integ.xml copyfile Clean1"
-                if ( true ) {
-                  input message: stepMsgA, submitter: admin
-                }
+            
                 script{
                 
                      input message: stepMsgA, submitter: admin
