@@ -10,7 +10,7 @@ pipeline{
                steps{
                 bat "ant -f C:\\raj\\automationpoc\\esb\\stlfLoadForecast\\build_integ.xml copyfile Clean1"
             
-              
+               }
                }
                stage("deploycheck for password"){
                       steps{
