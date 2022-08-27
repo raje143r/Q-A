@@ -4,7 +4,11 @@ pipeline{
               stage("CheckInputParametersBeforeproceeding"){
                steps{
                 script{
-                 input message: 'User input required',
+                        def name = "${params.project}"
+                    def gender = "${params.project}"
+                        def chk = "${project}"
+                        def chk1= "${project}"
+                 input message: $name,
                          ok: 'Release!'
                 }
                 }
