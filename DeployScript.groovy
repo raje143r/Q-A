@@ -1,9 +1,12 @@
 pipeline{
         agent any
         stages{
-              stage("build"){
+              stage("CheckInputParametersBeforeproceeding"){
                steps{
-                bat "ant -version"
+                script{
+                 input message 'User input required'
+                         ok 'Release!'
+                }
                 }
                }
                stage("predeploymentstep"){
