@@ -1,6 +1,10 @@
 pipeline{
         agent any
-         script{
+       
+        stages{
+              stage("CheckInputParametersBeforeproceeding"){
+               steps{
+                script{
                         def name = "${params.project}"
                     def gender = "${params.project}"
                         def chk = "${project}"
@@ -9,10 +13,6 @@ pipeline{
                         submitter: 'test,admin' 
                         ok: 'Release!'
                 }
-        stages{
-              stage("CheckInputParametersBeforeproceeding"){
-               steps{
-               echo "test value"
                 }
                }
                stage("predeploymentstep"){
