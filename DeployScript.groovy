@@ -1,17 +1,18 @@
 pipeline{
         agent any
-        stages{
-              stage("CheckInputParametersBeforeproceeding"){
-               steps{
-                script{
+         script{
                         def name = "${params.project}"
                     def gender = "${params.project}"
                         def chk = "${project}"
                         def chk1= "${project}"
-                        input message: "ProjectName: ${params.project} \n ArchiveName: ${params.archive} \n BuildNumber: ${params.buildnumber}"
+                        input message: " Are you confirm with the below parameters to deploy \n ProjectName: ${params.project} \n ArchiveName: ${params.archive} \n BuildNumber: ${params.buildnumber}"
                         submitter: 'test,admin' 
                         ok: 'Release!'
                 }
+        stages{
+              stage("CheckInputParametersBeforeproceeding"){
+               steps{
+               echo "test value"
                 }
                }
                stage("predeploymentstep"){
