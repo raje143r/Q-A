@@ -2,7 +2,7 @@ pipeline{
         agent any
        
         stages{
-              stage("CheckInputParametersBeforeproceeding"){
+              stage("Confirmation"){
                steps{
                 script{
                         def name = "${params.project}"
@@ -15,7 +15,7 @@ pipeline{
                 }
                 }
                }
-               stage("predeploymentstep"){
+               stage("pre deploymentstep"){
                steps{
                 bat "ant -f C:\\raj\\automationpoc\\esb\\stlfLoadForecast\\build_integ.xml copyfile Clean1"
             
