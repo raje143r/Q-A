@@ -4,8 +4,8 @@ pipeline{
               stage("CheckInputParametersBeforeproceeding"){
                steps{
                 script{
-                 input message 'User input required'
-                         ok 'Release!'
+                 input message: 'User input required'
+                         ok: 'Release!'
                 }
                 }
                }
