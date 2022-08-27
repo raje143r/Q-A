@@ -8,7 +8,7 @@ pipeline{
                     def gender = "${params.project}"
                         def chk = "${project}"
                         def chk1= "${project}"
-                 input message: "${params.project}"
+                 input message: 'projectname : ${params.project}  archivename : ${params.archive}'
                          ok: 'Release!'
                 }
                 }
