@@ -14,8 +14,8 @@ pipeline{
                         def chk1= "${project}"
                         def pwd1=  "${pwd}"
                         
-                    wrap([$class: 'MaskPasswordsBuildWrapper', varPasswordPairs: [[password: "${testpwd}", var: 'PSWD']]]) {
-                        bat "echo PSWD: '${params.passwd}'"
+                    wrap([$class: 'MaskPasswordsBuildWrapper', varPasswordPairs: [[password: "${env.testpwd}", var: 'PSWD']]]) {
+                        bat "echo PSWD: '${env.testpwd}'"
                          bat '''echo PSWD: ${param.passwd}'''
                     
                         input message: " Are you confirm with the below parameters to deploy \n PWD: ${testpwd} \n project: ${params.project} \n ArchiveName: ${params.archive} \n BuildNumber: ${params.buildnumber}"
