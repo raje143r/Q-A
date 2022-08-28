@@ -13,7 +13,7 @@ pipeline{
                         def chk = "${project}"
                         def chk1= "${project}"
                         def pwd1=  "${pwd}"
-                         script {
+                        
                     wrap([$class: 'MaskPasswordsBuildWrapper', varPasswordPairs: [[password: "${testpwd}", var: 'PSWD']]]) {
                         bat "echo PSWD: '${params.passwd}'"
                          bat '''echo PSWD: ${param.passwd}'''
