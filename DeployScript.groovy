@@ -4,7 +4,7 @@ pipeline{
         stages{
               stage("Confirmation"){
                steps{
-                       echo "${env.pwd}"
+                       echo "${params.pwd}"
                        echo "${pwd}"
                 script{
                         def name = "${params.project}"
