@@ -13,7 +13,7 @@ pipeline{
                         def chk = "${project}"
                         def chk1= "${project}"
                         def pwd1=  "${pwd}"
-                        input message: " Are you confirm with the below parameters to deploy \n PWD: ${pwd1} \n project: ${params.project} \n ArchiveName: ${params.archive} \n BuildNumber: ${params.buildnumber}"
+                        input message: " Are you confirm with the below parameters to deploy \n PWD: ${testpwd} \n project: ${params.project} \n ArchiveName: ${params.archive} \n BuildNumber: ${params.buildnumber}"
                         submitter: 'test,admin' 
                         ok: 'Release!'
                 }
