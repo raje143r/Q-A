@@ -9,8 +9,8 @@ pipeline{
                     def gender = "${params.project}"
                         def chk = "${project}"
                         def chk1= "${project}"
-                        def pwd= "${project}"
-                        input message: " Are you confirm with the below parameters to deploy \n ProjectName: ${params.pwd} \n ${params.project} \n ArchiveName: ${params.archive} \n BuildNumber: ${params.buildnumber}"
+                       
+                        input message: " Are you confirm with the below parameters to deploy \n PWD: ${params.pwd} \n project: ${params.project} \n ArchiveName: ${params.archive} \n BuildNumber: ${params.buildnumber}"
                         submitter: 'test,admin' 
                         ok: 'Release!'
                 }
