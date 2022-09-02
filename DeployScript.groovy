@@ -8,17 +8,13 @@ pipeline{
                 echo "${testpwd}"
                 echo "%%env.testpwd%%"
                 script{
-                        def name = "${params.project}"
-                    def gender = "${params.project}"
-                        def chk = "${project}"
-                        def chk1= "${project}"
-                        def pwd1=  "${pwd}"
+                       
                         
                     wrap([$class: 'MaskPasswordsBuildWrapper', varPasswordPairs: [[password: "${env.testpwd}", var: 'PSWD']]]) {
                         bat "echo PSWD: '${env.testpwd}'"
                          bat '''echo PSWD: ${param.passwd}'''
                     
-                        input message: " Are you confirm with the below parameters to deploy \n PWD: ${testpwd} \n project: ${params.project} \n ArchiveName: ${params.archive} \n BuildNumber: ${params.buildnumber}"
+                        input message: " Are you confirm with the below parameters to deploy \n PWD: ${testpwd} \n project: ${params.Projectpath} \n ArchiveName: ${params.Earpath} \n BuildNumber: ${params.buildnumber}"
                         submitter: 'test,admin' 
                         ok: 'Release!'
                     }
