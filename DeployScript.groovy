@@ -9,7 +9,7 @@ pipeline{
                 echo "%%env.testpwd%%"
                 script{
                        	def workspace = pwd()
-                        	echo "${workspace}"
+                        	echo "test workspacfull path ${workspace}"
                     wrap([$class: 'MaskPasswordsBuildWrapper', varPasswordPairs: [[password: "${env.testpwd}", var: 'PSWD']]]) {
                         bat "echo PSWD: '${env.testpwd}'"
                          bat '''echo PSWD: ${param.passwd}'''
