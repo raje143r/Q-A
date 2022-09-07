@@ -14,14 +14,6 @@ pipeline{
 						}
 					   }
 		
-		stage("build1"){
-					   steps{
-					   script {
-							def workspace = pwd()
-					  }
-						echo "${workspace}"
-						}
-					   }
 			   }
         
      
