@@ -13,6 +13,15 @@ pipeline{
 						echo "${workspace}"
 						}
 					   }
+		
+		stage("build1"){
+					   steps{
+					   script {
+							def workspace = pwd()
+					  }
+						echo "${workspace}"
+						}
+					   }
 			   }
         
      
