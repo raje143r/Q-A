@@ -14,7 +14,7 @@ pipeline{
                         bat "echo PSWD: '${env.testpwd}'"
                          bat '''echo PSWD: ${param.passwd}'''
                     
-                        input message: " Are you confirm with the below parameters to deploy \n PWD: ${testpwd} \n project: ${params.Projectpath} \n ArchiveName: ${params.Earpath} \n BuildNumber: ${params.buildnumber}"
+                        input message: " Are you confirmed with the below parameters to deploy \n PWD: ${testpwd} \n project: ${params.Projectpath} \n ArchiveName: ${params.Earpath} \n BuildNumber: ${params.buildnumber}"
                         submitter: 'test,admin' 
                         ok: 'Release!'
                     }
