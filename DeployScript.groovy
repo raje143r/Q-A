@@ -22,17 +22,15 @@ pipeline{
                 }
                }
                stage("pre deploymentstep"){
-               steps{
-                       script{
-                                if (params.profilechangeonly == 'true') {
-                                 bat "ant -f C:\\raj\\automationpoc\\esb\\stlfLoadForecast\\build_integ.xml Clean1"
-                                }
-                               else{
-                                        bat "ant -f C:\\raj\\automationpoc\\esb\\stlfLoadForecast\\build_integ.xml copyfile"
-                               }
-                       }
-            
-               }
+               steps {
+                        script {
+                                    if (params.profilechangeonly == 'true') {
+                                        echo 'Hello from main branch'
+                                    }  else {
+                                         echo "Hello from ${params.profilechangeonly} branch!"
+                                    }
+                            }
+                 }
                }
                stage("deploycheck for password"){
                       steps{
