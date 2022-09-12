@@ -23,7 +23,14 @@ pipeline{
                }
                stage("pre deploymentstep"){
                steps{
-                bat "ant -f C:\\raj\\automationpoc\\esb\\stlfLoadForecast\\build_integ.xml copyfile Clean1"
+                       script{
+                                if (params.profilechangeonly == 'true') {
+                                 bat "ant -f C:\\raj\\automationpoc\\esb\\stlfLoadForecast\\build_integ.xml Clean1"
+                                }
+                               else{
+                                        bat "ant -f C:\\raj\\automationpoc\\esb\\stlfLoadForecast\\build_integ.xml copyfile"
+                               }
+                       }
             
                }
                }
