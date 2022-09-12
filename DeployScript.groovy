@@ -24,11 +24,14 @@ pipeline{
                stage("pre deploymentstep"){
                steps {
                         script {
+                                 wrap([$class: 'MaskPasswordsBuildWrapper', varPasswordPairs: [[password: "${env.testpwd}", var: 'PSWD']]]) {
                                     if (params.profilechangeonly == 'true') {
                                         bat "ant -f C:\\raj\\automationpoc\\esb\\stlfLoadForecast\\build_integ.xml Clean1"
+                                            echo "test pwassword in script block ${env.testpwd}"
                                     }  else {
                                          bat "ant -f C:\\raj\\automationpoc\\esb\\stlfLoadForecast\\build_integ.xml copyfile"
                                     }
+                                 }
                             }
                  }
                }
