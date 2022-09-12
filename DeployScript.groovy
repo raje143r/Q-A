@@ -25,9 +25,9 @@ pipeline{
                steps {
                         script {
                                     if (params.profilechangeonly == 'true') {
-                                        echo 'Hello from main branch'
+                                        bat "ant -f C:\\raj\\automationpoc\\esb\\stlfLoadForecast\\build_integ.xml Clean1"
                                     }  else {
-                                         echo "Hello from ${params.profilechangeonly} branch!"
+                                         bat "ant -f C:\\raj\\automationpoc\\esb\\stlfLoadForecast\\build_integ.xml copyfile"
                                     }
                             }
                  }
