@@ -23,7 +23,7 @@ pipeline{
                }
                stage("pre deploymentstep"){
                steps{
-                bat "ant -f C:\\raj\\automationpoc\\esb\\stlfLoadForecast\\build_integ.xml getpassword copyfile Clean1"
+                bat "ant -f C:\\raj\\automationpoc\\esb\\stlfLoadForecast\\build_integ.xml copyfile Clean1"
             
                }
                }
